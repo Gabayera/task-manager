@@ -2,10 +2,7 @@ package com.taskmanager.domain;
 
 import com.taskmanager.exception.ValidationException;
 
-/**
- * Priority of a task. Natural order (LOW &lt; MEDIUM &lt; HIGH &lt; URGENT)
- * equals ascending weight, so {@link Enum#compareTo} may be used for sorting.
- */
+
 public enum Priority {
 
     LOW(1),
@@ -19,22 +16,12 @@ public enum Priority {
         this.weight = weight;
     }
 
-    /**
-     * Returns the numeric weight used for sorting and display.
-     *
-     * @return weight in [1, 4]
-     */
+    
     public int getWeight() {
         return weight;
     }
 
-    /**
-     * Parses a priority from user input (case-insensitive, trimmed).
-     *
-     * @param raw raw input; may be {@code null}
-     * @return the matching priority
-     * @throws ValidationException if {@code raw} is null, blank or unknown
-     */
+ 
     public static Priority fromString(String raw) {
         if (raw == null) {
             throw new ValidationException(

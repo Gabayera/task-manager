@@ -21,7 +21,7 @@ public class Task {
     private final Set<Tag> tags = new HashSet<>();
     
     private final LocalDateTime createdAt;
-    private LocalDateTime completedAt; // Not final!
+    private LocalDateTime completedAt; 
 
     private Task(String id, String userId, String title, LocalDateTime createdAt) {
         if (id == null || id.isBlank()) throw new ValidationException("Task id must not be blank");
@@ -83,9 +83,7 @@ public class Task {
 
     public boolean removeTag(Tag tag) { return tags.remove(tag); }
 
-    /**
-     * Enforces legal transitions and the completedAt invariant.
-     */
+    
     public void changeStatus(Status newStatus) {
         if (newStatus == null) throw new ValidationException("New status must not be null");
         if (!this.status.canTransitionTo(newStatus)) {
@@ -94,7 +92,6 @@ public class Task {
         
         this.status = newStatus;
         
-        // SRS Section 6.3 Rule 3: completedAt is set if and only if status is DONE.
         if (newStatus == Status.DONE) {
             this.completedAt = LocalDateTime.now();
         } else {
