@@ -1,0 +1,217 @@
+<mxfile host="app.diagrams.net">
+    <diagram id="task-manager-activity-large" name="Task Manager Activity Diagram Large">
+        <mxGraphModel dx="2800" dy="2000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2600" pageHeight="2000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+
+                <!-- Main Outer Frame -->
+                <mxCell id="sys_frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#355C8A;strokeWidth=3;fontSize=28;fontStyle=1;align=center;verticalAlign=top;spacingTop=20;fontFamily=Tahoma;" value="نمودار فعالیت چرخهٔ عمر وظیفه در سامانه مدیریت وظایف (Task Manager - Activity Diagram)" vertex="1">
+                    <mxGeometry x="80" y="40" width="2440" height="1880" as="geometry"/>
+                </mxCell>
+
+                <!-- Swimlane Headers (Large text 24px, height 65px) -->
+                <mxCell id="hdr_user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=24;fontStyle=1;align=center;fontFamily=Tahoma;" value="کاربر / مدیر تیم" vertex="1">
+                    <mxGeometry x="120" y="140" width="560" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdr_member" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=24;fontStyle=1;align=center;fontFamily=Tahoma;" value="عضو تیم (مجری وظیفه)" vertex="1">
+                    <mxGeometry x="720" y="140" width="560" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdr_system" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=24;fontStyle=1;align=center;fontFamily=Tahoma;" value="سامانه مدیریت وظایف (لایه سرویس و فایل)" vertex="1">
+                    <mxGeometry x="1320" y="140" width="660" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="hdr_notify" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=24;fontStyle=1;align=center;fontFamily=Tahoma;" value="سرویس یادآوری و اعلان" vertex="1">
+                    <mxGeometry x="2020" y="140" width="460" height="65" as="geometry"/>
+                </mxCell>
+
+                <!-- Vertical Dividers (Thicker lines) -->
+                <mxCell id="div1" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;" vertex="1">
+                    <mxGeometry x="700" y="210" width="10" height="1680" as="geometry"/>
+                </mxCell>
+                <mxCell id="div2" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;" vertex="1">
+                    <mxGeometry x="1300" y="210" width="10" height="1680" as="geometry"/>
+                </mxCell>
+                <mxCell id="div3" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;" vertex="1">
+                    <mxGeometry x="2000" y="210" width="10" height="1680" as="geometry"/>
+                </mxCell>
+
+                <!-- 1. Initial Node (Larger circle 46x46) -->
+                <mxCell id="start_node" parent="1" style="ellipse;fillColor=#000000;strokeColor=#355C8A;" vertex="1">
+                    <mxGeometry x="377" y="240" width="46" height="46" as="geometry"/>
+                </mxCell>
+
+                <!-- 2. Login / Select Action (Font: 19px, Height: 80px) -->
+                <mxCell id="act_login" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=19;fontFamily=Tahoma;fontStyle=1;" value="ورود به سامانه و انتخاب «ایجاد وظیفه»" vertex="1">
+                    <mxGeometry x="235" y="330" width="330" height="80" as="geometry"/>
+                </mxCell>
+
+                <!-- 3. Enter Task Data (Font: 18px, Height: 90px) -->
+                <mxCell id="act_enter_data" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;" value="وارد کردن عنوان، توضیحات، اولویت،&lt;br&gt;دسته‌بندی و مهلت انجام (Due Date)" vertex="1">
+                    <mxGeometry x="220" y="460" width="360" height="90" as="geometry"/>
+                </mxCell>
+
+                <!-- 4. System Validation Decision (Diamond 230x120, Font: 18px) -->
+                <mxCell id="dec_valid" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="آیا اطلاعات ورودی&lt;br&gt;معتبر است؟" vertex="1">
+                    <mxGeometry x="1535" y="445" width="230" height="120" as="geometry"/>
+                </mxCell>
+
+                <!-- 4a. Validation Error Box (Font: 18px, Height: 80px) -->
+                <mxCell id="act_val_err" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="نمایش پیام خطای اعتبارسنجی&lt;br&gt;و درخواست مجدد ورودی" vertex="1">
+                    <mxGeometry x="1505" y="315" width="290" height="80" as="geometry"/>
+                </mxCell>
+
+                <!-- 5. Create Task Entity & Atomic Persist (Font: 19px, Height: 95px) -->
+                <mxCell id="act_create_save" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2.5;fontSize=19;fontFamily=Tahoma;" value="&lt;b&gt;ساخت شیء وظیفه با وضعیت اولیه TODO&lt;/b&gt;&lt;br&gt;و ذخیره‌سازی اتمیک در فایل (tasks.dat)" vertex="1">
+                    <mxGeometry x="1465" y="625" width="370" height="95" as="geometry"/>
+                </mxCell>
+
+                <!-- 6. Decision: Personal vs Team Task (Diamond 220x110, Font: 18px) -->
+                <mxCell id="dec_assign" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="نوع وظیفه؟&lt;br&gt;(شخصی یا تیمی)" vertex="1">
+                    <mxGeometry x="290" y="760" width="220" height="110" as="geometry"/>
+                </mxCell>
+
+                <!-- 6a. Assign to Member (Font: 18px, Height: 80px) -->
+                <mxCell id="act_assign_member" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;" value="افزودن به پروژه تیمی و&lt;br&gt;اختصاص وظیفه به عضو تیم" vertex="1">
+                    <mxGeometry x="245" y="940" width="310" height="80" as="geometry"/>
+                </mxCell>
+
+                <!-- 7. Member Views Task (Font: 18px, Height: 80px) -->
+                <mxCell id="act_view_task" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;" value="مشاهده جزئیات وظیفه محول‌شده&lt;br&gt;یا انتخاب وظیفه شخصی از لیست" vertex="1">
+                    <mxGeometry x="830" y="940" width="340" height="80" as="geometry"/>
+                </mxCell>
+
+                <!-- 8. Reminder Decision & Action (Font: 17-18px) -->
+                <mxCell id="dec_due_check" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=17;fontFamily=Tahoma;fontStyle=1;" value="آیا تا سررسید کمتر از&lt;br&gt;۲۴ ساعت مانده یا عقب‌افتاده؟" vertex="1">
+                    <mxGeometry x="2115" y="615" width="270" height="115" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="act_send_reminder" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;" value="ارسال اعلان یادآوری سررسید&lt;br&gt;(علامت ! برای وظایف Overdue)" vertex="1">
+                    <mxGeometry x="2090" y="795" width="320" height="85" as="geometry"/>
+                </mxCell>
+
+                <!-- 9. Start Task Execution (Font: 19px, Height: 90px) -->
+                <mxCell id="act_in_progress" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=19;fontFamily=Tahoma;" value="&lt;b&gt;شروع انجام وظیفه&lt;/b&gt;&lt;br&gt;تغییر وضعیت به IN_PROGRESS و ثبت میزان پیشرفت" vertex="1">
+                    <mxGeometry x="800" y="1100" width="400" height="90" as="geometry"/>
+                </mxCell>
+
+                <!-- 10. Decision: Final Status Transition (Diamond 240x120, Font: 18px) -->
+                <mxCell id="dec_outcome" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="تصمیم تغییر وضعیت&lt;br&gt;نهایی وظیفه؟" vertex="1">
+                    <mxGeometry x="880" y="1260" width="240" height="120" as="geometry"/>
+                </mxCell>
+
+                <!-- 10a. Mark as DONE (Font: 18px, Height: 90px) -->
+                <mxCell id="act_done" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;" value="&lt;b&gt;تکمیل وظیفه (Status = DONE)&lt;/b&gt;&lt;br&gt;ثبت تاریخ و ساعت تکمیل (completedAt)" vertex="1">
+                    <mxGeometry x="990" y="1450" width="330" height="90" as="geometry"/>
+                </mxCell>
+
+                <!-- 10b. Mark as CANCELLED (Font: 18px, Height: 90px) -->
+                <mxCell id="act_cancel" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;" value="&lt;b&gt;لغو وظیفه (Status = CANCELLED)&lt;/b&gt;&lt;br&gt;مقدار completedAt خالی می‌ماند (null)" vertex="1">
+                    <mxGeometry x="670" y="1450" width="300" height="90" as="geometry"/>
+                </mxCell>
+
+                <!-- 11. Final Persistence & Project Stats (Font: 19px, Height: 95px) -->
+                <mxCell id="act_persist_final" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2.5;fontSize=19;fontFamily=Tahoma;" value="&lt;b&gt;ذخیره اتمیک تغییرات در دیسک (NFR-03)&lt;/b&gt;&lt;br&gt;و به‌روزرسانی آمار پیشرفت پروژه" vertex="1">
+                    <mxGeometry x="1465" y="1590" width="370" height="95" as="geometry"/>
+                </mxCell>
+
+                <!-- 12. Final Node (Diameter 46px) -->
+                <mxCell id="end_node" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#355C8A;" vertex="1">
+                    <mxGeometry x="1627" y="1745" width="46" height="46" as="geometry"/>
+                </mxCell>
+                <mxCell id="end_lbl" parent="1" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="پایان چرخهٔ عمر وظیفه (وضعیت پایانی)" vertex="1">
+                    <mxGeometry x="1500" y="1805" width="300" height="40" as="geometry"/>
+                </mxCell>
+
+                <!-- EDGES: strokeWidth=3, endSize=10, fontSize=16 -->
+                <mxCell id="e1" edge="1" parent="1" source="start_node" target="act_login" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e2" edge="1" parent="1" source="act_login" target="act_enter_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e3" edge="1" parent="1" source="act_enter_data" target="dec_valid" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_no" value="&lt;b&gt;خیر (نامعتبر)&lt;/b&gt;" edge="1" parent="1" source="dec_valid" target="act_val_err" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;fontFamily=Tahoma;fontSize=16;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e4_loop" edge="1" parent="1" source="act_val_err" target="act_enter_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;exitX=0;exitY=0.5;entryX=0.5;entryY=0;endSize=10;">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="880" y="355"/>
+                            <mxPoint x="880" y="435"/>
+                            <mxPoint x="400" y="435"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e5_yes" value="&lt;b&gt;بله (معتبر)&lt;/b&gt;" edge="1" parent="1" source="dec_valid" target="act_create_save" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#82B366;fontFamily=Tahoma;fontSize=16;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e6" edge="1" parent="1" source="act_create_save" target="dec_assign" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;exitX=0;exitY=0.5;entryX=0.5;entryY=0;endSize=10;">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="400" y="672"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e7_team" value="&lt;b&gt;وظیفه تیمی&lt;/b&gt;" edge="1" parent="1" source="dec_assign" target="act_assign_member" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;fontFamily=Tahoma;fontSize=16;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e7_personal" value="&lt;b&gt;وظیفه شخصی&lt;/b&gt;" edge="1" parent="1" source="dec_assign" target="act_view_task" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;fontFamily=Tahoma;fontSize=16;exitX=1;exitY=0.5;entryX=0.5;entryY=0;endSize=10;">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1000" y="815"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e8" edge="1" parent="1" source="act_assign_member" target="act_view_task" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_rem1" edge="1" parent="1" source="act_create_save" target="dec_due_check" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;dashed=1;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_rem2" value="&lt;b&gt;بله&lt;/b&gt;" edge="1" parent="1" source="dec_due_check" target="act_send_reminder" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;fontFamily=Tahoma;fontSize=16;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_rem3" edge="1" parent="1" source="act_send_reminder" target="act_view_task" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;endSize=10;">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1500" y="837"/>
+                            <mxPoint x="1500" y="980"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e9" edge="1" parent="1" source="act_view_task" target="act_in_progress" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e10" edge="1" parent="1" source="act_in_progress" target="dec_outcome" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e11_done" value="&lt;b&gt;تکمیل وظیفه&lt;/b&gt;" edge="1" parent="1" source="dec_outcome" target="act_done" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#82B366;fontFamily=Tahoma;fontSize=16;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e11_cancel" value="&lt;b&gt;لغو وظیفه&lt;/b&gt;" edge="1" parent="1" source="dec_outcome" target="act_cancel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;fontFamily=Tahoma;fontSize=16;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e12_a" edge="1" parent="1" source="act_done" target="act_persist_final" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;exitX=0.5;exitY=1;entryX=0;entryY=0.5;endSize=10;">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="1155" y="1637"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e12_b" edge="1" parent="1" source="act_cancel" target="act_persist_final" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;exitX=0.5;exitY=1;entryX=0;entryY=0.5;endSize=10;">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="820" y="1637"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e13" edge="1" parent="1" source="act_persist_final" target="end_node" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
