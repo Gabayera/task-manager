@@ -1,36 +1,43 @@
 package com.taskmanager.util;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.List;
-
 import com.taskmanager.exception.ValidationException;
 
 public class IdGenerator {
-    // T + 5 -> T1005
-    public static String generatorId(String prefix, long number) {
-        String cal = Long.toString(number + 1000);
-        prefix += cal;
-        return prefix;
+
+    public static String generateId(String prefix, long number) {
+        return prefix + (1000 + number);
     }
 
-    public static long extranctNumber(String id) {
-        Matcher m = Pattern.compile("\\d+").matcher(id);
-        if (m.find()) {
-            long number = Long.parseLong(m.group());
-            return number;
+    public static long extractNumber(String id) {
+        if (id == null || id.length() < 2) {
+            throw new ValidationException("Invalid ID format");
         }
-        throw new ValidationException("the id is not valid");
+        try {
+            // Example: T2001 -> extracts 2001
+            return Long.parseLong(id.substring(1));
+        } catch (NumberFormatException e) {
+            throw new ValidationException("ID contains non-numeric characters");
+        }
     }
 
     public static String getNextId(String prefix, List<String> existingIds) {
-        long maxNnumber = 0;
+        if (existingIds == null || existingIds.isEmpty()) {
+            return generateId(prefix, 1);
+        }
+
+        long maxAbsoluteNumber = 0;
         for (String id : existingIds) {
-            long number = extranctNumber(id);
-            if (number > maxNnumber) {
-                maxNnumber = number;
+            long number = extractNumber(id);
+            if (number > maxAbsoluteNumber) {
+                maxAbsoluteNumber = number;
             }
         }
-        return generatorId(prefix, maxNnumber + 1);
+
+        // Next absolute number, e.g., if max is 1005, next is 1006
+        long nextAbsoluteNumber = maxAbsoluteNumber + 1;
+
+        // Convert back to the offset format required by generateId
+        return prefix + nextAbsoluteNumber;
     }
 }
