@@ -322,7 +322,7 @@ The system is accepted when **all** of the following hold:
 
 - **Matin Habibi**
 - **Amir Hossein Yazdanparast**
-- **Pedram Merikh**
+- **Pedram Merrikh**
 
 ---
 
