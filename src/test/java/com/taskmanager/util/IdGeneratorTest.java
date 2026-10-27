@@ -8,13 +8,13 @@ import java.util.List;
 public final class IdGeneratorTest extends TestCase {
 
     public void testGenerateId() {
-        Assert.assertEquals("T1005", IdGenerator.generateId("T", 5));
-        Assert.assertEquals("U1001", IdGenerator.generateId("U", 1));
+        Assert.assertEquals("T1005", IdGenerator.generateId("T", 5L));
+        Assert.assertEquals("U1001", IdGenerator.generateId("U", 1L));
     }
 
     public void testExtractNumber() {
-        Assert.assertEquals(2001, IdGenerator.extractNumber("T2001"));
-        Assert.assertEquals(1001, IdGenerator.extractNumber("U1001"));
+        Assert.assertEquals(2001L, IdGenerator.extractNumber("T2001"));
+        Assert.assertEquals(1001L, IdGenerator.extractNumber("U1001"));
         Assert.assertThrows(ValidationException.class, () -> IdGenerator.extractNumber("INVALID"));
     }
 
