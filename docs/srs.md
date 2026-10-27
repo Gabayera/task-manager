@@ -53,6 +53,8 @@
 
 This document specifies the requirements for **Task Manager**, a single-user, console-oriented task management application written in Java Standard Edition. The application must be implemented without any framework or third-party library: only classes of the Java Class Library (`java.*`, `javax.*` from the JDK) may be used in production code.
 
+The document is the contractual basis for the subsequent design artefacts (use case, activity, class and entity-relationship diagrams) and for the implementation and acceptance testing of the system.
+
 ### 1.2 Scope
 
 The system allows one local user to register, log in, and manage a personal list of tasks. Tasks carry a title, description, due date, priority, status, category and an arbitrary set of tags. Tasks can be searched, filtered, sorted and reported on. All data is persisted locally in plain text files between sessions.
@@ -92,7 +94,17 @@ The system allows one local user to register, log in, and manage a personal list
 | **UC** | Use case. |
 | **JDK** | Java Development Kit (version 17 or later). |
 
+### 1.4 References
 
+- IEEE Std 830–1998, *IEEE Recommended Practice for Software Requirements Specifications*.
+- ISO/IEC 25010:2011, *Systems and software Quality Requirements and Evaluation (SQuaRE)*.
+- UML 2.5 specification (for the design diagrams).
+
+### 1.5 Document Overview
+
+Section 2 gives the overall description, Section 3 the functional and Section 4 the non-functional requirements. Sections 5–7 cover interfaces, data and architecture. Section 8 lists acceptance criteria. The four design diagrams (use case, activity, class, entity-relationship) are maintained as separate artefacts under `docs/diagrams/`.
+
+---
 
 ## 2 Overall Description
 
