@@ -6,6 +6,9 @@ import com.taskmanager.domain.StatusTest;
 import com.taskmanager.domain.TagTest;
 import com.taskmanager.domain.TaskTest;
 import com.taskmanager.domain.UserTest;
+import com.taskmanager.persistence.FileCategoryRepositoryTest;
+import com.taskmanager.persistence.FileTaskRepositoryTest;
+import com.taskmanager.persistence.FileUserRepositoryTest;
 import com.taskmanager.testframework.TestCase;
 import com.taskmanager.testframework.TestFrameworkTest;
 import com.taskmanager.util.ConsoleIOTest;
@@ -32,6 +35,11 @@ public final class AllTests {
                 FileStorageTest.class,
                 PasswordHasherTest.class,
                 IdGeneratorTest.class,
-                ConsoleIOTest.class);
+                ConsoleIOTest.class,
+                FileCategoryRepositoryTest.class,
+                FileTaskRepositoryTest.class,
+                FileUserRepositoryTest.class
+
+        );
     }
 }
