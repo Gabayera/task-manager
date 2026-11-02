@@ -22,7 +22,8 @@ public class FileCategoryRepository implements CategoryRepository {
     private void load() {
         try {
             List<String> lines = FileStorage.readLines(path);
-            if (lines.isEmpty()) return;
+            if (lines.isEmpty())
+                return;
 
             for (int i = 1; i < lines.size(); i++) {
                 String line = lines.get(i);
@@ -36,8 +37,7 @@ public class FileCategoryRepository implements CategoryRepository {
                             FileStorage.unescape(parts[0]),
                             FileStorage.unescape(parts[1]),
                             FileStorage.unescape(parts[2]),
-                            FileStorage.unescape(parts[3])
-                    ));
+                            FileStorage.unescape(parts[3])));
                 } catch (Exception e) {
                     System.err.println("Error parsing category line: " + line + " - " + e.getMessage());
                 }
@@ -55,8 +55,7 @@ public class FileCategoryRepository implements CategoryRepository {
                     FileStorage.escape(c.getId()),
                     FileStorage.escape(c.getUserId()),
                     FileStorage.escape(c.getName()),
-                    FileStorage.escape(c.getColor())
-            ));
+                    FileStorage.escape(c.getColor())));
         }
         try {
             FileStorage.writeLines(path, lines);
@@ -66,13 +65,13 @@ public class FileCategoryRepository implements CategoryRepository {
     }
 
     @Override
-    public List<Category> findAllByUserId(String userId) {
-        return categories.stream().filter(c -> c.getUserId().equals(userId)).collect(Collectors.toList());
+    public List<Category> findAll() {
+        return new ArrayList<>(categories);
     }
 
     @Override
-    public List<Category> findAll() {
-        return List.of();
+    public List<Category> findAllByUserId(String userId) {
+        return categories.stream().filter(c -> c.getUserId().equals(userId)).collect(Collectors.toList());
     }
 
     @Override
