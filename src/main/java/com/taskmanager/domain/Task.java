@@ -13,21 +13,21 @@ public class Task {
     private final String id;
     private final String userId;
     private String title;
-    private String description;     
-    private LocalDate dueDate;      
+    private String description;
+    private LocalDate dueDate;
     private Priority priority;
-    private Status status; 
-    private String categoryId;      
+    private Status status;
+    private String categoryId;
     private final Set<Tag> tags = new HashSet<>();
-    
+
     private final LocalDateTime createdAt;
-    private LocalDateTime completedAt; 
+    private LocalDateTime completedAt;
 
     private Task(String id, String userId, String title, LocalDateTime createdAt) {
         if (id == null || id.isBlank()) throw new ValidationException("Task id must not be blank");
         if (userId == null || userId.isBlank()) throw new ValidationException("Task userId must not be blank");
         if (title == null || title.isBlank()) throw new ValidationException("Task title must not be blank");
-        
+
         this.id = id;
         this.userId = userId;
         this.createdAt = Objects.requireNonNull(createdAt, "createdAt");
@@ -64,7 +64,7 @@ public class Task {
         this.title = newTitle.trim();
     }
 
-    public void describe(String description) { this.description = description; } 
+    public void describe(String description) { this.description = description; }
 
     public void reschedule(LocalDate dueDate) {
         if (dueDate != null && dueDate.isBefore(createdAt.toLocalDate())) {
@@ -83,15 +83,15 @@ public class Task {
 
     public boolean removeTag(Tag tag) { return tags.remove(tag); }
 
-    
+
     public void changeStatus(Status newStatus) {
         if (newStatus == null) throw new ValidationException("New status must not be null");
         if (!this.status.canTransitionTo(newStatus)) {
             throw new ValidationException("Illegal transition from " + this.status + " to " + newStatus);
         }
-        
+
         this.status = newStatus;
-        
+
         if (newStatus == Status.DONE) {
             this.completedAt = LocalDateTime.now();
         } else {
@@ -99,15 +99,15 @@ public class Task {
         }
     }
 
-    @Override 
+    @Override
     public boolean equals(Object o) {
         return o instanceof Task other && id.equals(other.id);
     }
 
-    @Override 
+    @Override
     public int hashCode() { return id.hashCode(); }
 
-    @Override 
+    @Override
     public String toString() {
         return "Task[" + id + ", " + title + ", " + status + "]";
     }
@@ -123,6 +123,7 @@ public class Task {
         private Status status = Status.TODO;
         private String categoryId;
         private final Set<Tag> tags = new HashSet<>();
+        private LocalDateTime completedAt; // NEW
 
         private Builder(String id, String userId, String title) {
             this.id = id;
@@ -133,9 +134,11 @@ public class Task {
         public Builder createdAt(LocalDateTime v) { this.createdAt = v; return this; }
         public Builder description(String v) { this.description = v; return this; }
         public Builder dueDate(LocalDate v) { this.dueDate = v; return this; }
+        public Builder status(Status v) { this.status = v; return this; }
         public Builder priority(Priority v) { this.priority = v; return this; }
         public Builder categoryId(String v) { this.categoryId = v; return this; }
         public Builder addTag(Tag v) { this.tags.add(v); return this; }
+        public Builder completedAt(LocalDateTime v) { this.completedAt = v; return this; } // NEW
 
         public Task build() {
             Task task = new Task(id, userId, title, createdAt);
@@ -145,7 +148,10 @@ public class Task {
             task.categorize(categoryId);
             task.tags.addAll(tags);
             if (status != Status.TODO) {
-                task.changeStatus(status); 
+                task.changeStatus(status);
+            }
+            if (this.completedAt != null) {
+                task.completedAt = this.completedAt; // Restore exact timestamp
             }
             return task;
         }

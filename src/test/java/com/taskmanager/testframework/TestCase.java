@@ -14,11 +14,11 @@ import java.util.List;
  */
 public abstract class TestCase {
 
-    protected void setUp() {
+    protected void setUp() throws Exception {
         // Optional per-test setup hook.
     }
 
-    protected void tearDown() {
+    protected void tearDown() throws Exception {
         // Optional per-test cleanup hook.
     }
 

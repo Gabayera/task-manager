@@ -3,6 +3,7 @@ package com.taskmanager.util;
 import com.taskmanager.exception.ValidationException;
 import com.taskmanager.testframework.Assert;
 import com.taskmanager.testframework.TestCase;
+
 import java.util.List;
 
 public final class IdGeneratorTest extends TestCase {
@@ -13,8 +14,8 @@ public final class IdGeneratorTest extends TestCase {
     }
 
     public void testExtractNumber() {
-        Assert.assertEquals(2001, IdGenerator.extractNumber("T2001"));
-        Assert.assertEquals(1001, IdGenerator.extractNumber("U1001"));
+        Assert.assertEquals(2001L, IdGenerator.extractNumber("T2001"));
+        Assert.assertEquals(1001L, IdGenerator.extractNumber("U1001"));
         Assert.assertThrows(ValidationException.class, () -> IdGenerator.extractNumber("INVALID"));
     }
 
