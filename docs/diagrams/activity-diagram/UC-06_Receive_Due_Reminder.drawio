@@ -1,0 +1,46 @@
+<mxfile host="app.diagrams.net">
+    <diagram id="uc06-receive-reminder" name="UC-06 Receive Due Reminder">
+        <mxGraphModel dx="1850" dy="1250" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1850" pageHeight="1200" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+
+                <mxCell id="frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#355C8A;strokeWidth=3;fontSize=24;fontStyle=1;align=center;verticalAlign=top;spacingTop=16;fontFamily=Tahoma;" value="نمودار فعالیت ۶: دریافت یادآور سررسید (UC-06: Receive Due Reminder)" vertex="1">
+                    <mxGeometry x="60" y="40" width="1730" height="1080" as="geometry"/>
+                </mxCell>
+
+                <mxCell id="lane_sched" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;" value="زمان‌بند / ساعت (Scheduler - محرک)" vertex="1"><mxGeometry x="90" y="120" width="440" height="55" as="geometry"/></mxCell>
+                <mxCell id="lane_sys" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;" value="سامانه (ReminderService &amp; ConsoleUI)" vertex="1"><mxGeometry x="560" y="120" width="740" height="55" as="geometry"/></mxCell>
+                <mxCell id="lane_user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;" value="کاربر (User - مشاهده‌گر)" vertex="1"><mxGeometry x="1330" y="120" width="430" height="55" as="geometry"/></mxCell>
+
+                <mxCell id="div1" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;" vertex="1"><mxGeometry x="540" y="180" width="10" height="910" as="geometry"/></mxCell>
+                <mxCell id="div2" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;" vertex="1"><mxGeometry x="1310" y="180" width="10" height="910" as="geometry"/></mxCell>
+
+                <mxCell id="start" parent="1" style="ellipse;fillColor=#000000;strokeColor=#355C8A;" vertex="1"><mxGeometry x="287" y="210" width="46" height="46" as="geometry"/></mxCell>
+
+                <mxCell id="a1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="تحریک ReminderService در شروع برنامه&lt;br&gt;یا ابتدای هر چرخه منوی اصلی" vertex="1"><mxGeometry x="125" y="300" width="370" height="70" as="geometry"/></mxCell>
+
+                <mxCell id="a2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2.5;fontSize=17;fontFamily=Tahoma;fontStyle=1;" value="بررسی تسک‌های فعال کاربر (غیر از DONE و CANCELLED)&lt;br&gt;که عقب‌افتاده‌اند یا سررسیدشان زیر ۲۴ ساعت است" vertex="1"><mxGeometry x="610" y="300" width="430" height="70" as="geometry"/></mxCell>
+
+                <mxCell id="d1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=17;fontFamily=Tahoma;fontStyle=1;" value="آیا تسکی واجد شرایط&lt;br&gt;یادآوری یافت شد؟" vertex="1"><mxGeometry x="705" y="440" width="240" height="110" as="geometry"/></mxCell>
+
+                <mxCell id="no_rem" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=16;fontFamily=Tahoma;" value="عدم چاپ خروجی (2a: Nothing is printed)" vertex="1"><mxGeometry x="1010" y="462" width="270" height="65" as="geometry"/></mxCell>
+
+                <mxCell id="a3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="چاپ لیست یادآورها در کنسول&lt;br&gt;(علامت‌گذاری تسک‌های عقب‌افتاده با «!»)" vertex="1"><mxGeometry x="625" y="630" width="400" height="70" as="geometry"/></mxCell>
+
+                <mxCell id="a4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;" value="مشاهده لیست یادآورها و تسک‌های فوری" vertex="1"><mxGeometry x="1365" y="630" width="360" height="70" as="geometry"/></mxCell>
+
+                <mxCell id="end" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#355C8A;" vertex="1"><mxGeometry x="1522" y="810" width="46" height="46" as="geometry"/></mxCell>
+
+                <mxCell id="e1" edge="1" parent="1" source="start" target="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="e2" edge="1" parent="1" source="a1" target="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#D6B656;endSize=10;"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="e3" edge="1" parent="1" source="a2" target="d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="e4_no" value="&lt;b&gt;خیر&lt;/b&gt;" edge="1" parent="1" source="d1" target="no_rem" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;fontSize=15;fontFamily=Tahoma;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;labelBackgroundColor=#FFFFFF;"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="e4_yes" value="&lt;b&gt;بله&lt;/b&gt;" edge="1" parent="1" source="d1" target="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;fontSize=15;fontFamily=Tahoma;endSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=#FFFFFF;"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="e5" edge="1" parent="1" source="a3" target="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="e6" edge="1" parent="1" source="a4" target="end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;"><mxGeometry relative="1" as="geometry"/></mxCell>
+                <mxCell id="e7" edge="1" parent="1" source="no_rem" target="end" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;exitX=0.5;exitY=1;entryX=0;entryY=0.5;"><mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1145" y="833"/></Array></mxGeometry></mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
