@@ -59,7 +59,7 @@ public abstract class TestCase {
                     } else if (failure != cleanup) {
                         failure.addSuppressed(cleanup);
                     }
-                }
+                } 
             }
 
             if (failure == null) {
