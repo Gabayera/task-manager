@@ -112,6 +112,10 @@ public class Task {
         return "Task[" + id + ", " + title + ", " + status + "]";
     }
 
+    public void clearTags() {
+        this.tags.clear();
+    }
+
     public static final class Builder {
         private final String id;
         private final String userId;
