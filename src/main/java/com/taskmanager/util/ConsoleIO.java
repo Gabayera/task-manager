@@ -16,12 +16,11 @@ public class ConsoleIO {
     private final PrintStream out;
 
     public ConsoleIO(InputStream in, PrintStream out) {
-<<<<<<< HEAD
+
         this.scanner = in;
         this.out = out;
     } 
 }
-=======
         this.scanner = new Scanner(in);
         this.out = out;
     }
