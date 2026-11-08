@@ -1,14 +1,9 @@
 package com.taskmanager.util;
 
-<<<<<<< HEAD
-import java.io.PrintStream;
-import java.io.InputStream;
-=======
 import java.io.InputStream;
 import java.io.PrintStream;
 import java.time.LocalDate;
 import java.time.format.DateTimeParseException;
->>>>>>> master
 import java.util.Scanner;
 
 public class ConsoleIO {
@@ -16,11 +11,6 @@ public class ConsoleIO {
     private final PrintStream out;
 
     public ConsoleIO(InputStream in, PrintStream out) {
-
-        this.scanner = in;
-        this.out = out;
-    } 
-}
         this.scanner = new Scanner(in);
         this.out = out;
     }
@@ -78,4 +68,3 @@ public class ConsoleIO {
         out.println("Error: " + message);
     }
 }
->>>>>>> master
