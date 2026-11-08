@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="fr06-update-task" name="Update Task">
+    <mxGraphModel dx="2726" dy="1846" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1900" pageHeight="1450" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#121212;strokeColor=#355C8A;strokeWidth=3;fontSize=24;fontStyle=1;align=center;verticalAlign=top;spacingTop=16;fontFamily=Tahoma;fontColor=#FFFFFF;textDirection=rtl;" value="نمودار فعالیت: ویرایش وظیفه (Update Task)" vertex="1">
+          <mxGeometry height="1350" width="1780" x="60" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;textDirection=rtl;" value="کاربر (User)" vertex="1">
+          <mxGeometry height="55" width="440" x="90" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_sys" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;textDirection=rtl;" value="سامانه (ConsoleUI &amp; TaskService)" vertex="1">
+          <mxGeometry height="55" width="720" x="560" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_file" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;textDirection=rtl;" value="سیستم فایل (FileTaskRepository - tasks.dat)" vertex="1">
+          <mxGeometry height="55" width="500" x="1310" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="div1" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;textDirection=rtl;" vertex="1">
+          <mxGeometry height="1180" width="10" x="540" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="div2" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;textDirection=rtl;" vertex="1">
+          <mxGeometry height="1180" width="10" x="1290" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;fillColor=#FFFFFF;strokeColor=#355C8A;textDirection=rtl;" vertex="1">
+          <mxGeometry height="46" width="46" x="287" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="انتخاب «4) Update task» و وارد کردن شناسه تسک" vertex="1">
+          <mxGeometry height="65" width="350" x="135" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=17;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="آیا تسک متعلق به&lt;br&gt;کاربر وجود دارد؟" vertex="1">
+          <mxGeometry height="105" width="230" x="680" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="err1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2.5;fontSize=16;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="نمایش خطای «وظیفه یافت نشد»" vertex="1">
+          <mxGeometry height="65" width="260" x="990" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=17;fontFamily=Tahoma;textDirection=rtl;" value="درخواست مقادیر جدید (عنوان، توضیحات، سررسید،&lt;br&gt;اولویت، دسته‌بندی یا تگ‌ها)" vertex="1">
+          <mxGeometry height="65" width="390" x="600" y="440" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="وارد کردن مقادیر جدید توسط کاربر" vertex="1">
+          <mxGeometry height="65" width="320" x="150" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FFF2CC;strokeColor=#D6B656;strokeWidth=2.5;fontSize=17;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="آیا داده‌های جدید&lt;br&gt;معتبر هستند؟ (FR-16)" vertex="1">
+          <mxGeometry height="105" width="230" x="680" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="err2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#F8CECC;strokeColor=#B85450;strokeWidth=2.5;fontSize=16;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="نمایش خطای اعتبارسنجی ورودی" vertex="1">
+          <mxGeometry height="65" width="260" x="990" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;textDirection=rtl;" value="&lt;b&gt;به‌روزرسانی فیلدهای شیء Task در حافظه&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="380" x="605" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;textDirection=rtl;" value="&lt;b&gt;ذخیره اتمیک در فایل tasks.dat&lt;/b&gt;&lt;br&gt;(فایل موقت + جابه‌جایی اتمیک NFR-03)" vertex="1">
+          <mxGeometry height="70" width="390" x="1360" y="725" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="نمایش پیام تأیید ویرایش موفق وظیفه" vertex="1">
+          <mxGeometry height="65" width="380" x="605" y="880" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;html=1;shape=endState;fillColor=#FFFFFF;strokeColor=#355C8A;textDirection=rtl;" vertex="1">
+          <mxGeometry height="46" width="46" x="772" y="1020" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="a1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;textDirection=rtl;" target="d1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_no" edge="1" parent="1" source="d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;fontSize=15;fontFamily=Tahoma;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;labelBackgroundColor=#FFFFFF;textDirection=rtl;" target="err1" value="&lt;b&gt;خیر&lt;/b&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3_yes" edge="1" parent="1" source="d1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#82B366;fontSize=15;fontFamily=Tahoma;endSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=#FFFFFF;textDirection=rtl;" target="a2" value="&lt;b&gt;بله&lt;/b&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;exitX=0;exitY=0.5;entryX=0.5;entryY=0;textDirection=rtl;" target="a3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="310" y="473" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;textDirection=rtl;" target="d2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6_no" edge="1" parent="1" source="d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;fontSize=15;fontFamily=Tahoma;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;labelBackgroundColor=#FFFFFF;textDirection=rtl;" target="err2" value="&lt;b&gt;خیر&lt;/b&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6_loop" edge="1" parent="1" source="err2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#B85450;endSize=10;exitX=0.5;exitY=0;entryX=1;entryY=0.5;textDirection=rtl;" target="a2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1120" y="473" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6_yes" edge="1" parent="1" source="d2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#82B366;fontSize=15;fontFamily=Tahoma;endSize=10;exitX=0.5;exitY=1;entryX=0.5;entryY=0;labelBackgroundColor=#FFFFFF;textDirection=rtl;" target="a4" value="&lt;b&gt;بله&lt;/b&gt;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#82B366;endSize=10;exitX=1;exitY=0.5;entryX=0;entryY=0.5;textDirection=rtl;" target="a5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="a5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;exitX=0.5;exitY=1;entryX=1;entryY=0.5;textDirection=rtl;" target="a6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1555" y="913" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="a6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

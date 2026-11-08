@@ -1,0 +1,67 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="fr15-view-statistics" name="View Statistics">
+    <mxGraphModel dx="1298" dy="879" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1150" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="frame" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#121212;strokeColor=#355C8A;strokeWidth=3;fontSize=24;fontStyle=1;align=center;verticalAlign=top;spacingTop=16;fontFamily=Tahoma;fontColor=light-dark(#FFFFFF,#000000);textDirection=rtl;" value="نمودار فعالیت: مشاهده آمار و گزارش‌ها (View Statistics)" vertex="1">
+          <mxGeometry height="1040" width="1380" x="60" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;textDirection=rtl;" value="کاربر (User)" vertex="1">
+          <mxGeometry height="55" width="460" x="90" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_sys" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#EAF2F8;strokeColor=#6C8EBF;strokeWidth=2;fontSize=20;fontStyle=1;align=center;fontFamily=Tahoma;textDirection=rtl;" value="سامانه (ConsoleUI &amp; ReportService)" vertex="1">
+          <mxGeometry height="55" width="830" x="580" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="div1" parent="1" style="line;strokeWidth=2;direction=south;html=1;dashed=1;strokeColor=#6C8EBF;textDirection=rtl;" vertex="1">
+          <mxGeometry height="870" width="10" x="560" y="180" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;fillColor=#FCFCFC;strokeColor=#355C8A;textDirection=rtl;" vertex="1">
+          <mxGeometry height="46" width="46" x="297" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="انتخاب گزینه «9) Statistics» از منوی اصلی" vertex="1">
+          <mxGeometry height="65" width="360" x="140" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="شمارش تعداد تسک‌ها به تفکیک هر وضعیت&lt;br&gt;(ReportService.countByStatus)" vertex="1">
+          <mxGeometry height="70" width="410" x="790" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="شمارش تعداد تسک‌های عقب‌افتاده&lt;br&gt;(ReportService.overdue)" vertex="1">
+          <mxGeometry height="70" width="410" x="790" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#DAE8FC;strokeColor=#6C8EBF;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="محاسبه نرخ تکمیل وظایف به درصد&lt;br&gt;(ReportService.completionRate)" vertex="1">
+          <mxGeometry height="70" width="410" x="790" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#D5E8D4;strokeColor=#82B366;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;fontStyle=1;textDirection=rtl;" value="چاپ گزارش آماری فرمت‌بندی‌شده در کنسول" vertex="1">
+          <mxGeometry height="65" width="410" x="790" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="a6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=20;fillColor=#FFFFFF;strokeColor=#355C8A;strokeWidth=2.5;fontSize=18;fontFamily=Tahoma;textDirection=rtl;" value="مشاهده خلاصه آمار توسط کاربر" vertex="1">
+          <mxGeometry height="65" width="360" x="140" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;html=1;shape=endState;fillColor=#FFFFFF;strokeColor=#355C8A;textDirection=rtl;" vertex="1">
+          <mxGeometry height="46" width="46" x="297" y="820" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="a1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="a2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="a3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="a4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="a4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#82B366;endSize=10;textDirection=rtl;" target="a5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="a5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="a6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="a6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=3;strokeColor=#355C8A;endSize=10;textDirection=rtl;" target="end">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
