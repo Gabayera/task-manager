@@ -11,6 +11,7 @@ import com.taskmanager.persistence.FileTaskRepositoryTest;
 import com.taskmanager.persistence.FileUserRepositoryTest;
 import com.taskmanager.service.AuthServiceTest;
 import com.taskmanager.service.CategoryServiceTest;
+import com.taskmanager.service.TaskServiceTest;
 import com.taskmanager.testframework.TestCase;
 import com.taskmanager.testframework.TestFrameworkTest;
 import com.taskmanager.util.ConsoleIOTest;
@@ -42,7 +43,8 @@ public final class AllTests {
                 FileTaskRepositoryTest.class,
                 FileUserRepositoryTest.class,
                 AuthServiceTest.class,
-                CategoryServiceTest.class
-        );
+                CategoryServiceTest.class,
+                CategoryServiceTest.class,
+                TaskServiceTest.class);
     }
 }
