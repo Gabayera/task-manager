@@ -99,9 +99,6 @@ public class Task {
         }
     }
 
-    public void clearTags() {
-        tags.clear();
-    }
 
     @Override
     public boolean equals(Object o) {

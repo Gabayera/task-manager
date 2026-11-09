@@ -1,23 +1,17 @@
 package com.taskmanager.service;
 
-<<<<<<< HEAD
-=======
 import com.taskmanager.domain.Priority;
 import com.taskmanager.domain.Status;
 import com.taskmanager.domain.Tag;
->>>>>>> develop_matin
 import com.taskmanager.domain.Task;
 import com.taskmanager.exception.ValidationException;
 import com.taskmanager.persistence.CategoryRepository;
 import com.taskmanager.persistence.TaskRepository;
-<<<<<<< HEAD
-=======
 import com.taskmanager.util.IdGenerator;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
->>>>>>> develop_matin
 
 public class TaskService {
     private final TaskRepository taskRepository;
@@ -28,20 +22,14 @@ public class TaskService {
         this.categoryRepository = categoryRepository;
     }
 
-<<<<<<< HEAD
-=======
     public List<Task> getTasks(String userId) {
         return taskRepository.findAllByUserId(userId);
     }
 
->>>>>>> develop_matin
     public Task getTask(String taskId) {
         return taskRepository.findById(taskId).orElseThrow(() -> new ValidationException("Task not found: " + taskId));
     }
 
-<<<<<<< HEAD
-    
-=======
     public Task createTask(String userId, String title, String description, LocalDate dueDate, Priority priority, String categoryId, List<Tag> tags) {
 
         validateCategory(userId, categoryId);
@@ -121,5 +109,4 @@ public class TaskService {
             }
         }
     }
->>>>>>> develop_matin
 }
