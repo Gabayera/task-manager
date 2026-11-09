@@ -1,6 +1,7 @@
 package com.taskmanager.util;
 
 import java.util.List;
+
 import com.taskmanager.exception.ValidationException;
 
 public class IdGenerator {
@@ -14,7 +15,6 @@ public class IdGenerator {
             throw new ValidationException("Invalid ID format");
         }
         try {
-            // Example: T2001 -> extracts 2001
             return Long.parseLong(id.substring(1));
         } catch (NumberFormatException e) {
             throw new ValidationException("ID contains non-numeric characters");
@@ -34,10 +34,7 @@ public class IdGenerator {
             }
         }
 
-        // Next absolute number, e.g., if max is 1005, next is 1006
         long nextAbsoluteNumber = maxAbsoluteNumber + 1;
-
-        // Convert back to the offset format required by generateId
         return prefix + nextAbsoluteNumber;
     }
 }
