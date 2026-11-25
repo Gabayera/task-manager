@@ -39,7 +39,7 @@ public final class TaskServiceTest extends TestCase {
 
     public void testCreateAndGetTask() {
         Task task = taskService.createTask("U1001", "Write SRS", "Chapter 1-8",
-                LocalDate.of(2025, 2, 1), Priority.HIGH, null, List.of(new Tag("design")));
+                LocalDate.now().plusDays(30), Priority.HIGH, null, List.of(new Tag("design")));
 
         Assert.assertNotNull(task.getId());
         Assert.assertEquals("Write SRS", task.getTitle());
