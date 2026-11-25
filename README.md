@@ -17,12 +17,14 @@ A single-user, console-oriented task management application written in pure **Ja
 - [Project Structure](#project-structure)
 - [Domain Model](#domain-model)
 - [Getting Started](#getting-started)
+- [Assignment 6 — Reminder Feature](#assignment-6--reminder-feature)
 - [Usage](#usage)
 - [Data Persistence](#data-persistence)
 - [Non-Functional Requirements](#non-functional-requirements)
 - [Acceptance Criteria](#acceptance-criteria)
 - [Out of Scope](#out-of-scope)
 - [Roadmap](#roadmap)
+- [Changelog](CHANGELOG.md)
 - [References](#references)
 - [Authors](#authors)
 - [License](#license)
@@ -179,21 +181,101 @@ task-manager/
 - A UTF-8 capable terminal
 - Read/write access to an application data directory
 
-### Compile
+### Build
+
+The scripts compile production code to `out/main` and test code to `out/test`.
 
 ```bash
-# From the project root
-find src/main/java -name "*.java" > sources.txt
-javac -d out @sources.txt
+./build.sh          # Linux / macOS
+build.bat           # Windows
 ```
 
 ### Run
 
+The full console application (`ConsoleUI` / `Main`) is planned for a later part and is **not wired up yet** (`run.sh` only prints a notice).
+The feature delivered for Assignment 6 can be run on its own. See [Assignment 6 — Reminder Feature](#assignment-6--reminder-feature).
+
+### Run the unit tests
+
 ```bash
-java -cp out com.taskmanager.ui.ConsoleUI
+./test.sh           # Linux / macOS
+test.bat            # Windows
 ```
 
-> A `build.gradle` / `pom.xml` may be added for convenience, but it must not introduce third-party **runtime** dependencies.
+`test.sh` builds the project and runs every test class registered in `src/test/java/com/taskmanager/AllTests.java`.
+Each test prints `PASS`/`FAIL`, then a summary line such as `70 passed, 0 failed, 70 total`. The exit code is non-zero if any test fails.
+
+To run a single test class:
+
+```bash
+./build.sh
+java -cp out/main:out/test com.taskmanager.testframework.TestRunner com.taskmanager.service.ReminderServiceTest
+# Windows: java -cp "out\main;out\test" com.taskmanager.testframework.TestRunner com.taskmanager.service.ReminderServiceTest
+```
+
+> **Why not JUnit/pytest?** The SRS (Section 2.5) allows only the JDK class library. The project therefore ships a small JUnit-style harness in `src/test/java/com/taskmanager/testframework/` (`TestCase`, `Assert`, `TestRunner`). Test methods are public, take no arguments, and start with `test`. `setUp()`/`tearDown()` run around every test.
+
+---
+
+## Assignment 6 — Reminder Feature
+
+**Feature:** due-date reminders. **Requirement:** FR-14, use case UC-06 (Receive Due Reminder). **Scenarios:** [`docs/features /reminders.feature`](docs/features%20/reminders.feature).
+
+### What it does
+
+`ReminderService.getReminders(userId)` returns the user's tasks that are
+
+- **not** `DONE` or `CANCELLED`, **and**
+- have a due date that is **overdue, today, or tomorrow** (the "next 24 hours"; due dates are calendar dates).
+
+The list is sorted by due date, oldest first. `isOverdue(task)` tells the UI which entries to mark with `!`.
+The service only reads data and never changes tasks or files. "Today" comes from an injectable `java.time.Clock`, so the tests can use a fixed date.
+
+| File | Purpose |
+|------|---------|
+| `src/main/java/com/taskmanager/service/ReminderService.java` | Feature implementation (service layer) |
+| `src/main/java/com/taskmanager/demo/ReminderDemo.java` | Stand-alone demo that prints the reminder list |
+| `src/test/java/com/taskmanager/service/ReminderServiceTest.java` | Unit tests |
+| `run-reminders.sh` / `run-reminders.bat` | Build and run the demo |
+
+### Run the feature
+
+```bash
+./run-reminders.sh      # Linux / macOS
+run-reminders.bat       # Windows
+```
+
+The demo creates sample tasks in a temporary data directory using the real `TaskService` and `FileTaskRepository`, then prints:
+
+```
+Reminders (overdue or due within 24 hours, today = 2026-11-25):
+! T9001  Pay library fine         due 2026-11-23  [HIGH]
+  T1001  Submit assignment 6      due 2026-11-25  [URGENT]
+  T1002  Prepare presentation     due 2026-11-26  [HIGH]
+```
+
+The task due in 5 days and the `DONE` task are not listed.
+
+### Unit tests (`ReminderServiceTest`)
+
+The tests use a fixed clock (today = 2025-02-10, as in `reminders.feature`) and an in-memory `TaskRepository`, so they do not depend on the real date or on the file system.
+
+| Test | Kind | Checks |
+|------|------|--------|
+| `testGetRemindersReturnsOverdueAndDueSoonTasks` | valid | Overdue, today, and tomorrow tasks are returned in order. Tasks due later, `DONE`/`CANCELLED` tasks, tasks without a due date, and other users' tasks are excluded. |
+| `testIsOverdueOnlyForPastDueDates` | valid | Only past due dates get the `!` marker. |
+| `testGetRemindersReturnsEmptyListWhenNothingIsDue` | valid | "Nothing qualifies" returns an empty list. |
+| `testGetRemindersDoesNotModifyData` | valid | Reminders never write to the repository. |
+| `testGetRemindersRejectsBlankUserId` | **error** | A `null`/blank user id throws `ValidationException`. |
+| `testConstructorRejectsNullRepository` | **error** | The service cannot be created without a repository. |
+
+Run only these tests:
+
+```bash
+./build.sh && java -cp out/main:out/test com.taskmanager.testframework.TestRunner com.taskmanager.service.ReminderServiceTest
+```
+
+See [`CHANGELOG.md`](CHANGELOG.md) for the full list of changes.
 
 ---
 
